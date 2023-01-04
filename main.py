@@ -68,10 +68,10 @@ def main():
     # Check this by hand calculation
     # Created lambda functions in a form of A + BT + CT^2 + DT^3 for acetic acid and water
     # And a general cp for solution by including their mass ratios (before the units are corrected by multiplying with 1000/MOLAR_WEIGHT_X)
-    # CP Functions with respect to temperature # 0.2 acetic acid, 0.8 water
+    # CP Functions with respect to temperature # 0.3 acetic acid, 0.7 water
     acetic_acid_cp = lambda T:  ACETIC_ACID_CP_CONSTANTS[0] + ACETIC_ACID_CP_CONSTANTS[1]*T + ACETIC_ACID_CP_CONSTANTS[2]*T**2 + ACETIC_ACID_CP_CONSTANTS[3]*T**3 # J/molK
     water_cp = lambda T:  WATER_CP_CONSTANTS[0] + WATER_CP_CONSTANTS[1]*T + WATER_CP_CONSTANTS[2]*T**2 + WATER_CP_CONSTANTS[3]*T**3 # J/molK
-    general_cp_of_solution = lambda T : (0.2 * acetic_acid_cp(T)*1000/MOLAR_WEIGHT_OF_ACETIC_ACID) + (0.8 * water_cp(T)*1000/ MOLAR_WEIGHT_OF_WATER) # Return J/kgK
+    general_cp_of_solution = lambda T : (0.3 * acetic_acid_cp(T)*1000/MOLAR_WEIGHT_OF_ACETIC_ACID) + (0.7 * water_cp(T)*1000/ MOLAR_WEIGHT_OF_WATER) # Return J/kgK
 
     # Calculating Q Required
     # m' indicated flow rate
