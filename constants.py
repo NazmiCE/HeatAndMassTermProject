@@ -21,11 +21,9 @@ PLATE_THICKNESS_MAX = float(os.environ.get('PLATE_THICKNESS_MAX'))
 PLATE_SPACING_MIN = float(os.environ.get('PLATE_SPACING_MIN'))
 PLATE_SPACING_MAX = float(os.environ.get('PLATE_SPACING_MAX'))
 
-
 # Molecular Weights of Components
 MOLAR_WEIGHT_OF_WATER = 18.02 # g/mol
 MOLAR_WEIGHT_OF_ACETIC_ACID = 60.052 # g/mol
-
 
 # Physical Properties of Fluids
 # Cp constants in the form of [A,B,C,D] -> A + BT + CT^2 + DT^3
@@ -36,3 +34,10 @@ WATER_CP_CONSTANTS = [92.053, -3.9953e-02, -2.1103e-04, 5.3469e-07] # Valid Betw
 # Individual Flow Rates
 WATER_FLOW_RATE = FLOW_RATE * 0.8 # kg/hr
 ACETIC_ACID_FLOW_RATE = FLOW_RATE * 0.2 # kg/hr
+
+# Cooling Water Parameters at 30+273 = 303
+COOLING_SPESIFIC_HEAT= 4178.4 # J/kgK
+COOLING_DENSITY = 995.82 #kg/m^3
+COOLING_VISCOSITY = 0.8034 * 10**(-3) # Pas
+COOLING_THERMAL_CONDUCTIVITY = 0.6172 # W/mK
+PRANDT_NUMBER = round(COOLING_VISCOSITY*COOLING_SPESIFIC_HEAT/COOLING_THERMAL_CONDUCTIVITY,2)
