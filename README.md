@@ -2,6 +2,7 @@
 HeatAndMass
 
 Middle East Technical University ChE 327 Heat and Mass Transfer Operations Term Project
+Gasketed Plate Heat Exchanger Design 
 
 GROUP MEMBERS
 
